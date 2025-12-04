@@ -1,0 +1,25 @@
+﻿@page
+@model projectqa.Views.Calculator.IndexModel
+@{
+}
+<h2>Calculator</h2>
+
+<form asp-action="Calculate" method="post">
+    <input type="number" name="a" required />
+    <input type="number" name="b" required />
+
+    <select name="operation">
+        <option>Add</option>
+        <option>Subtract</option>
+        <option>Multiply</option>
+        <option>Divide</option>
+    </select>
+
+    <button type="submit">Calculate</button>
+</form>
+
+@if (ViewBag.Result != null)
+{
+    <h3>Result: @ViewBag.Result</h3>
+}
+
